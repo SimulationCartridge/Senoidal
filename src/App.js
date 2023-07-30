@@ -25,7 +25,7 @@ function App() {
       <Route path="/" element={<Root />} />
       <Route path="/inicio" element={<Home />} />
       <Route path="/senoidal" element={<Home />} />
-      <Route path="/https://senoidalhz.netlify.app/" element={<Home />} />
+      <Route path="/senoidalhz.netlify.app/" element={<Home />} />
       <Route path="/archivo/:id" element={<ArchivoDetails />} />
       <Route path="/archivo/" element={<Archivo />} />
       {/* <Route path="/nosotros" element={<Nosotros />} /> */}
