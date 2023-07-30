@@ -39,8 +39,8 @@ useEffect(() => {
                   </Link>
 
                   <p className='titles-archive'> 
-                    <a>
-                      {post.fields.titles}</a> 
+                    
+                      {post.fields.titles}
                   </p>
                 </div> 
               </div>

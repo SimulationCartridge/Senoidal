@@ -279,7 +279,9 @@ background-clip: text;
   color: black;
 }
 
-
+.link-posts{
+text-decoration: none;
+}
 
 
 @media screen and (max-width: 600px) {
@@ -380,6 +382,7 @@ background-clip: text;
   right: 0;
   background: linear-gradient(to right, rgba(102, 153, 204, 0.5), rgba(51, 102, 153, 0.5), rgba(203, 136, 210, 0.5));
   color: black;
+  font-weight: bold;
 }
 
 @media screen and (max-width: 600px) {
@@ -561,7 +564,7 @@ h2 {
 
 
 
-.instagram-icon {
+img.instagram-icon{
   width: 24px; 
   height: 24px; 
   padding: 0px;
@@ -569,6 +572,7 @@ h2 {
   background-image: url('/src/components/Images/instaIcon.png');
   background-size:cover; 
   align-items: center;
+  z-index: 999;
 }
 
 .instagram-icon, ul {
