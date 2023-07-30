@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import WelcomeLetter from './welcomeLetter';
+
 
 
 const Welcome = () => {
