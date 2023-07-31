@@ -19,7 +19,7 @@ function Footer() {
         </div>
         <div className="social-media">
           <ul>
-            <img className="instagram-icon" onClick={handleInstagramClick} alt="IG"/>
+            <img className="instagram-icon" onClick={handleInstagramClick} alt=""/>
           </ul>
         </div>
       </footer>

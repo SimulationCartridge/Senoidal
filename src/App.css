@@ -83,7 +83,7 @@ position: relative;
   .main-container {
     flex-direction: column;
     background-color: black;
-    padding: 5px;
+    padding: 8px;
   }
 
   .logo {
@@ -572,7 +572,6 @@ img.instagram-icon{
   background-image: url('/src/components/Images/instaIcon.png');
   background-size: cover; 
   align-items: center;
-  z-index: 999;
 }
 
 .instagram-icon, ul {
@@ -581,6 +580,7 @@ img.instagram-icon{
   padding: 0px;
   margin: 0px;
 }
+
 
 
 .section{
