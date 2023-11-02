@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { client } from '../../client';
 import { useParams } from 'react-router-dom';
-import marked from 'marked';
+import * as marked from 'marked';
 
 const BlogDetails = () => {
   const [singleBlogPost, setSingleBlogPost] = useState([]);
