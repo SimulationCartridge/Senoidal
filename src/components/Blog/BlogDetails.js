@@ -26,7 +26,7 @@ const BlogDetails = () => {
     <img className="post-image-full"src={singleBlogPost?.fields?.images?.fields?.file?.url} title="" alt={singleBlogPost?.fields?.titles}  />
     <h2>{singleBlogPost?.fields?.titles}</h2>
     <div class="content">
-      <p className='texto-detail'>{singleBlogPost?.fields?.content}</p>
+      <ReactMarkdown>{singleBlogPost?.fields?.content}</ReactMarkdown>
     </div>
   </section>
 </div>
