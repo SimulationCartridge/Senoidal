@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { client } from '../../client';
 import { useParams } from 'react-router-dom';
-import * as marked from 'marked';
 
 const BlogDetails = () => {
   const [singleBlogPost, setSingleBlogPost] = useState([]);
@@ -20,16 +19,14 @@ const BlogDetails = () => {
     getEntryById()
   }, [id])
 
-  const renderMarkdown = (content) => {
-    return { __html: marked(content) };
-  }
-
   return (
-    <div className="container-detail">
-      <section className="blog-post">
-        <img className="post-image-full" src={singleBlogPost?.fields?.images?.fields?.file?.url} title="" alt={singleBlogPost?.fields?.titles} />
+    <div class="container-detail">
+      <section class="blog-post">
+        <img className="post-image-full" src={singleBlogPost?.fields?.images?.fields?.file?.url} title="" alt={singleBlogPost?.fields?.titles}  />
         <h2>{singleBlogPost?.fields?.titles}</h2>
-        <div className="content" dangerouslySetInnerHTML={renderMarkdown(singleBlogPost?.fields?.content)} />
+        <div class="content">
+          <p className='texto-detail'>{singleBlogPost?.fields?.content}</p>
+        </div>
       </section>
     </div>
   );
