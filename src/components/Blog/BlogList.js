@@ -17,7 +17,9 @@ useEffect(() => {
       .catch(console.error);
   }, []); 
   return (
-        <div class="posts-container">
+    <section className='list-container'>
+        <h3 class="header-posts">Posts</h3>
+        <div class="posts-container">  
             {blogPosts.map((post) => (
               <div key={post.sys.id}
               className='post'>
@@ -37,13 +39,11 @@ useEffect(() => {
                     </h2>
                   </Link>
 
-                  <p className='titles'> 
-                      {post.fields.titles}
-                  </p>
                 </div> 
               </div>
             ))}
         </div>
+        </section>
   )
 }
 

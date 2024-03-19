@@ -3,16 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 function Navigation() {
   return (
-    <div className='main-container'>
-      {/* <div className="logo"><p>My Logo</p></div> */}
-    <nav className='nav'>
-      <div className='navigation-links'>
+      <nav className='nav'>
         <NavLink  to="/inicio" className="navLink">Inicio</NavLink>
-        <NavLink  to="/archivo" className="navLink">Archivo</NavLink>
-        {/* <NavLink  to="/nosotros" className="navLink">Nosotros</NavLink>    */}
-        </div>
-    </nav>
-    </div>
+        <NavLink  to="/contacto" className="navLink">Contacto</NavLink>
+        </nav>
   );
 }
 

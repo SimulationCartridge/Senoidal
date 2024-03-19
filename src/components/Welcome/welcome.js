@@ -12,9 +12,10 @@ const Welcome = () => {
 
   return (
     <div className='contenedor'>
-
+      <section className='banner-container'>
+        
       {showText && (
-    <h2 className="welcome">
+    <p className="welcome">
       <span className="banner-text">
         {'Senoidal'.split('').map((letter, index) => (
           <span
@@ -25,11 +26,12 @@ const Welcome = () => {
           </span>
         ))}
       </span>
-    </h2>
+    </p>
   )}
-
-<section className='banner-container'>
+        
       </section>
+
+
     </div>
   );
 }

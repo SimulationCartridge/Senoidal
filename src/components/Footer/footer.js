@@ -11,19 +11,14 @@ function Footer() {
 
 
   return (
-    <div className="footer-container">
-      <div className="section-divider"></div> {/* Línea divisora */}
       <footer className="footer">
-        <div className="contact-info">
-          <h3>Redes Sociales</h3>
-        </div>
+          <h3 className="footer-title">Contacto</h3>
         <div className="social-media">
           <ul>
             <img className="instagram-icon" onClick={handleInstagramClick} alt=""/>
           </ul>
         </div>
       </footer>
-    </div>
   );
 }
 

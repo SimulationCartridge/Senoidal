@@ -3,32 +3,33 @@ import { client } from '../../client';
 import { useParams } from 'react-router-dom';
 
 const BlogDetails = () => {
-  const [singleBlogPost, setSingleBlogPost] = useState([]);
+  const [singleBlogPost, setSingleBlogPost] = useState({});
   let { id } = useParams();
 
   useEffect(() => {
     const getEntryById = async () => {
       try {
-        await client.getEntry(id).then((entries) => {
-          setSingleBlogPost(entries)
-        })
+        const entry = await client.getEntry(id);
+        setSingleBlogPost(entry);
       } catch (error) {
         console.log(`Error fetching authors ${error}`);
       }
     };
-    getEntryById()
-  }, [id])
+    getEntryById();
+  }, [id]);
 
   return (
-    <div class="container-detail">
-      <section class="blog-post">
-        <img className="post-image-full" src={singleBlogPost?.fields?.images?.fields?.file?.url} title="" alt={singleBlogPost?.fields?.titles}  />
-        <h2>{singleBlogPost?.fields?.titles}</h2>
-        <div class="content">
-          <p className='texto-detail'>{singleBlogPost?.fields?.content}</p>
-        </div>
-      </section>
-    </div>
+    <body className='body-blog'>
+      <div className="container-detail">
+        <section className="blog-post">
+          <img className="post-image-full" src={singleBlogPost?.fields?.images?.fields?.file?.url} title="" alt={singleBlogPost?.fields?.titles}  />
+          <h2 className='title-ps'>{singleBlogPost?.fields?.titles}</h2>
+          <div className='test'>
+          <pre className="texto-detail" dangerouslySetInnerHTML={{ __html: singleBlogPost?.fields?.content }} />
+          </div>
+        </section>
+      </div>
+    </body>
   );
 };
 

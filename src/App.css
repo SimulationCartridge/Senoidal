@@ -1,116 +1,31 @@
 body{font-family: 'Quicksand', sans-serif;}
 
-
-
-
 /**************NAVIGATION**************/
 
-.main-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(0, 0, 0);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  padding: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.logo{
-  text-align: right;
-}
-
-.logo p{
-  margin: 0;
-}
-
 .nav{
+  background-color: rgba(0, 0, 0);
+  width: 100%;
+  height: 65px;
   display: flex;
-  justify-content:space-between;
-}
-
-.navigation-links{
-  display: flex;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .navLink{
-font-size: 1.5rem;  
-margin-right: 20px;
+font-size: 2rem;  
 text-decoration: none;
 color: white;
-position: relative;
+padding: 10px;
 }
 
-.navLink::after{
-  content: " ";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: rgb(141, 232, 214);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
 
-.navLink:hover::after {
-  transform: scaleX(1);
-}
 
-.navLink::before{
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  color:  rgb(198, 200, 120);
-  text-shadow: 0 0 10px blue;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
- .navLink:hover:before{
-  opacity: 1;
- }
 
  /* Estilos para dispositivos móviles */
 @media screen and (max-width: 600px) {
-  .main-container {
-    flex-direction: column;
-    background-color: black;
-    padding: 8px;
-  }
 
-  .logo {
-    text-align: center;
-    margin-bottom: 5px;
-  }
-
-  .nav {
-    justify-content: center;
-  }
-
-  .navLink {
-    margin-right: 15px;
-    font-size: 1rem;
-    justify-content: center;
-  }
 }
-
- 
-
-
-
-
-
-
-
-
 
 
 
@@ -118,21 +33,20 @@ position: relative;
 
 .contenedor{
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  margin-bottom: 50px;
+  background-image: url('./components/Images/welcome.jpg');
+  background-repeat: no-repeat;
+  background-size: 850px 850px;
+  background-position: top;
+  height:700px;
+  width: 100%;
 }
 
 .banner-container {
   height:700px;
-  width: 100%;
-  background-image: url('./components/Images/welcome.jpg');
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: top;
-  position: relative; 
+  width: 100%; 
 }
 
 /* Estilos para dispositivos móviles */
@@ -144,27 +58,14 @@ position: relative;
   }
 }
 
-
-
-
-
-
-
 /**************Letrero**************/
-
-  .welcome{
-    align-items: flex-start;
-    position:absolute;
-    z-index: 998;
-    margin-bottom: 300px;
-  }
-
   .banner-text {
     font-size: 8em;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
   }
-
+  
   .banner-text span{
 letter-spacing: 5px;
 background-image: linear-gradient(to right, #6699cc, #336699, #cb88d2); 
@@ -173,7 +74,6 @@ background-image: linear-gradient(to right, #6699cc, #336699, #cb88d2);
 background-clip: text; 
 }
     
-
   @keyframes fadeInLetter {
 	0% {
 	  opacity: 0;
@@ -216,28 +116,39 @@ background-clip: text;
 
   
 /**************POSTS**************/
+.list-container{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.post-section{
+  display: flex;
+  flex-direction: column;
+}
+.header-posts{
+ font-size: 3rem;
+ padding: 50px;
+ margin: 0 auto;
+}
+
 .posts-container{
- width: auto;
- display: flex;
- flex-wrap: wrap;
- justify-content:center;
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-template-rows: repeat(3, 1fr);
+ grid-column-gap: 50px;
+ grid-row-gap: 50px;
 }
 
 .post{
-  margin: 50px;
-  margin-bottom: 30px;
- }
- 
- .image-container{
   position: relative;
   overflow: hidden;
   border-radius: 5%;
-}
-
-
+  
+ }
+ 
 .post-image {
-  width: 350px;
-  height: auto;
+  width: 300px;
+  height: 350px;
   margin: 0%;
   border: 0%;
 }
@@ -263,22 +174,6 @@ background-clip: text;
   opacity: 1;
 }
 
-.overlay-text {
-  font-size: 16px;
-  text-align: center;
-}
-
-
-
-.titles{
-  text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0%;
-  background: linear-gradient(to right, rgba(102, 153, 204, 0.5), rgba(51, 102, 153, 0.5), rgba(203, 136, 210, 0.5));
-  color: black;
-}
-
 .link-posts{
 text-decoration: none;
 }
@@ -302,7 +197,7 @@ text-decoration: none;
     text-align: center;
     font-size: 0.775rem;
     font-weight: bold;
-    margin: 0%;
+    margin: auto;
   }
 
   .overlay {
@@ -323,12 +218,13 @@ text-decoration: none;
 
 
 /**************Posts Archivo**************/
-.fondo{
+.body-blog{
   background-color: #6ab8d5;
-  width: auto;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content:space-around;
+  align-items: center;
+  justify-content: center;
 }
 
 .post-archive{
@@ -384,6 +280,12 @@ text-decoration: none;
   color: black;
   font-weight: bold;
 }
+.texto-detail{
+  white-space: pre-wrap;
+  font-size: 20px;
+  text-align: center;
+}
+
 
 @media screen and (max-width: 600px) {
   .post-archive {
@@ -430,37 +332,40 @@ text-decoration: none;
 
 
 /**************Detail**************/
+
+
 .container-detail {
-  width: 100%;
   max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
-  margin:100px auto;
+  margin:100px auto; 
+  background-color: #f9f9f9;
+  border-radius: 8px;
 }
 
 .blog-post {
-  background-color: #f9f9f9;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .post-image-full {
   width: 100%;
-  max-height: 400px; /* Ajusta la altura máxima según tus necesidades */
+  max-height: 400px; 
   object-fit: cover;
   border-radius: 8px;
 }
 
-h2 {
+.title-detail {
+  font-size: 2rem;
   margin-top: 10px;
   margin-bottom: 15px;
 }
 
-.content {
-  margin-bottom: 15px;
-}
-
 .texto-detail{
-  margin: 0;
+  margin: px;
 }
 
 /* Estilos para dispositivos móviles */
@@ -531,35 +436,14 @@ h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 200px;
+
   padding: 0%;
 }
 
-.footer-container {
-  position: relative;
-}
-
-.footer-container::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 20%; /* Ajusta la posición izquierda de la línea divisora */
-  width: 60%; /* Ajusta el ancho de la línea divisora */
-  height: 1px; /* Ajusta el grosor de la línea divisora */
-  background-color: rgba(0, 0, 0, 0.5); /* Color de línea sutil */
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
-}
-
-
-
-
-.contact-info,
-.social-media {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  color: rgb(0, 0, 0);
+.footer-title{
+  font-size: 3rem;
+  padding: 50px;
+  margin: 0 auto;
 }
 
 
@@ -582,10 +466,6 @@ img.instagram-icon{
 }
 
 
-
-.section{
-  margin-top:100px;
-}
 
 
 

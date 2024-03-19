@@ -9,8 +9,8 @@ import Navigation from "./components/Navigation/navigation.js";
 //CSS//
 
 import "./App.css";
-import Archivo from "./components/Pages/archive.js";
 import ArchivoDetails from "./components/Pages/archiveDetail.js";
+import Footer from "./components/Footer/footer.js";
 
 
 
@@ -20,14 +20,14 @@ function App() {
     <Router>
 
       <Navigation />
-
+      
       <Routes>
       <Route path="/" element={<Root />} />
       <Route path="/inicio" element={<Home />} />
+      <Route path="/contacto" element={<Footer />} />
       <Route path="/senoidal" element={<Home />} />
       <Route path="/senoidalhz.netlify.app/" element={<Home />} />
       <Route path="/archivo/:id" element={<ArchivoDetails />} />
-      <Route path="/archivo/" element={<Archivo />} />
       {/* <Route path="/nosotros" element={<Nosotros />} /> */}
       <Route path="*" element ={<NotFound />} />
       </Routes>
